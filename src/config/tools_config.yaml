@@ -1,0 +1,19 @@
+cortex_complete: # Set default model if one is not specified by user in Cortex Complete tool
+  default_model: "snowflake-llama-3.3-70b"
+  description: >
+    "LLM service that can answer general questions"
+search_services: # List all Cortex Search services
+  - service_name: "cortex_search_leases"
+    description: > # Should start with "Search service that ..."
+      "Search service that indexes leases and contracts"
+    database_name: "CORTEX_AI_DB"
+    schema_name: "DOCUMENT_ASSISTANT"
+analyst_services: # List all Cortex Analyst semantic models/views
+  - service_name: "cortex_analyst_sales_orders" # Create descriptive name for the service
+    semantic_model: "@CORTEX_AGENTS_DEMO.PUBLIC.SEMANTIC_MODELS/sales_orders.yaml" # Fully-qualify semantic YAML model or Semantic View
+    description: > # Should start with "Analyst service that ..."
+      "Cortex Analyst service that has knowledge about sales orders"
+  - service_name: "cortex_analyst_tick_history" # Create descriptive name for the service
+    semantic_model: "@CORTEX_ANALYST_DEMO.PUBLIC.SEMANTIC_MODELS/tick_history_semantic_model2.yaml" # Fully-qualify semantic YAML model or Semantic View
+    description: > # Should start with "Analyst service that ..."
+      "Cortex Analyst service that has knowledge about stocks, equities and ticker history" 

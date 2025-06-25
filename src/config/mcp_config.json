@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "mcp-server-snowflake": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/Snowflake-Labs/mcp",
+        "mcp-server-snowflake",
+        "--service-config-file",
+        "./src/config/tools_config.yaml",
+        "--account-identifier",
+        "${SNOWFLAKE_ACCOUNT_IDENTIFIER}",
+        "--username",
+        "${SNOWFLAKE_USERNAME}",
+        "--pat",
+        "${SNOWFLAKE_PAT}"
+      ]
+    }
+  } 
+} 
