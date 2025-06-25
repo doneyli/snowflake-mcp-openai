@@ -26,7 +26,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
 from dotenv import load_dotenv
-from agents import Agent, Runner
+from agents.run import Agent, Runner
 from agents.mcp.server import MCPServerStdio
 
 

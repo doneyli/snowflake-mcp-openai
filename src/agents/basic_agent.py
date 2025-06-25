@@ -20,7 +20,7 @@ import os
 import asyncio
 from pathlib import Path
 from dotenv import load_dotenv
-from agents import Agent, Runner
+from agents.run import Agent, Runner
 from agents.mcp.server import MCPServerStdio
 
 
