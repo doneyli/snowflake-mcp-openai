@@ -12,6 +12,7 @@ import asyncio
 import os
 from pathlib import Path
 import sys
+from dotenv import load_dotenv
 
 # Add src to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
@@ -25,6 +26,9 @@ async def demo_basic_queries():
     """
     print("🎯 Basic Snowflake MCP Query Examples")
     print("=" * 50)
+    
+    # Load environment variables from .env file  
+    load_dotenv()
     
     # Check environment setup
     required_vars = [

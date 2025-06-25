@@ -19,17 +19,21 @@ Usage:
 import os
 import asyncio
 from pathlib import Path
+from dotenv import load_dotenv
 from agents import Agent, Runner
 from agents.mcp.server import MCPServerStdio
 
 
 async def main():
+    # Load environment variables from .env file
+    load_dotenv()
+    
     # Ensure the OpenAI API key is set
     openai_key = os.getenv("OPENAI_API_KEY")
     if not openai_key:
         raise RuntimeError(
             "Environment variable OPENAI_API_KEY is not set. "
-            "Please export your OpenAI secret key before running."
+            "Please set it in your .env file or export it directly."
         )
 
     # Get Snowflake credentials from environment
@@ -39,7 +43,7 @@ async def main():
     
     if not all([snowflake_account, snowflake_username, snowflake_pat]):
         raise RuntimeError(
-            "Missing Snowflake credentials. Please set: "
+            "Missing Snowflake credentials. Please set in your .env file: "
             "SNOWFLAKE_ACCOUNT_IDENTIFIER, SNOWFLAKE_USERNAME, SNOWFLAKE_PAT"
         )
 
